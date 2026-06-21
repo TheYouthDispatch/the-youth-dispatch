@@ -1,1 +1,52 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f6f7ff;
+}
 
+.hero {
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(135deg, #c7d2fe, #fbcfe8);
+  color: #222;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: white;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  background: #eee;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
