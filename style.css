@@ -377,33 +377,24 @@ nav ul{
     display:flex;
     justify-content:center;
     align-items:flex-end;
-
     gap:8px;
-
     margin-top:60px;
-
     flex-wrap:wrap;
 }
 
 .book{
-
     width:90px;
-
     height:280px;
 
-    writing-mode:vertical-rl;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    writing-mode:vertical-rl;
     text-orientation:mixed;
 
     color:white;
-
     font-weight:bold;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
 
     cursor:pointer;
 
@@ -434,6 +425,4 @@ nav ul{
 
 .current{
     background:#795548;
-}
- }
 }
