@@ -10,7 +10,20 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+<script>
+const reveals = document.querySelectorAll(".reveal");
 
+window.addEventListener("scroll", () => {
+    for (let el of reveals){
+        const top = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if(top < windowHeight - 100){
+            el.classList.add("active");
+        }
+    }
+});
+</script>
 <body>
 
 <nav>
@@ -75,7 +88,7 @@
 ✦ ✦ ✦
 </div>
     
-<section class="featured">
+<section class="featured reveal">
 
     <h2>Featured Articles</h2>
 
@@ -145,7 +158,7 @@ NEWS
 
 </section>
 
-<section class="contributors">
+<section class="contributors reveal">
 
     <h2>Meet Our Contributors</h2>
 
