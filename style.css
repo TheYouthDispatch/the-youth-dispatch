@@ -253,32 +253,45 @@ section{
 }
 
 .card{
-    background:var(--paper);
-
-    color:var(--text);
+    background:#f4efe6;
+    color:#2d241c;
 
     padding:35px;
 
-    border-left:5px solid var(--gold);
-
-    transition:.35s ease;
-
-    background-image:
-    linear-gradient(
-    rgba(0,0,0,.02),
-    rgba(0,0,0,.02)
-    );
-
-    box-shadow:
-    0 15px 35px rgba(0,0,0,.15);
+    border-radius:18px;
 
     position:relative;
 
-    overflow:hidden;
+    box-shadow:
+        8px 8px 0 rgba(0,0,0,.25),
+        0 15px 35px rgba(0,0,0,.15);
+
+    transform:rotate(-0.5deg);
+
+    transition:.3s ease;
+}
+
+.card::before{
+    content:"";
+
+    position:absolute;
+    top:-10px;
+    left:20px;
+
+    width:60px;
+    height:20px;
+
+    background:rgba(255,255,255,.4);
+
+    transform:rotate(-5deg);
+
+    border-radius:4px;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.2);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) rotate(0deg);
 }
 
 .card span{
@@ -517,22 +530,48 @@ nav ul{
     margin-top:40px;
 }
 
+.index-card::before{
+    content:"";
+
+    position:absolute;
+    top:-8px;
+    right:20px;
+
+    width:14px;
+    height:14px;
+
+    background:#b08d57;
+
+    border-radius:50%;
+
+    box-shadow:0 3px 6px rgba(0,0,0,.3);
+}
+
+.card, .index-card, .opportunity-card, input, button{
+    border-radius:16px;
+}
+
 .index-card{
     background:#f4efe6;
-
     color:#2d241c;
 
     padding:30px;
 
-    border:1px solid rgba(0,0,0,.15);
+    border-radius:18px;
 
-    box-shadow:6px 6px 0 rgba(0,0,0,.2);
-
-    transition:.3s;
+    box-shadow:
+        8px 8px 0 rgba(0,0,0,.25),
+        0 12px 30px rgba(0,0,0,.12);
 
     position:relative;
 
-    font-family:'Libre Baskerville',serif;
+    transition:.3s ease;
+
+    transform:rotate(0.6deg);
+}
+
+.index-card:nth-child(even){
+    transform:rotate(-0.6deg);
 }
 
 .index-card:hover{
@@ -566,6 +605,10 @@ body::before{
     pointer-events:none;
 
     z-index:-1;
+}
+
+body{
+    line-height:1.6;
 }
 
 section{
@@ -637,4 +680,9 @@ h2{
 .person:hover{
     transform:translateY(-6px);
     background:rgba(244,239,230,0.08);
+}
+
+h1, h2, h3{
+    font-family:'Abril Fatface', serif;
+    letter-spacing:0.5px;
 }
