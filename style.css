@@ -219,7 +219,8 @@ nav a:hover::after{
     transform:translateY(-4px) scale(1.03);
 }
 section{
-    padding:100px 10%;
+    padding:110px 10%;
+    position:relative;
 }
 
 .quote{
@@ -317,13 +318,19 @@ section{
 }
 
 .opportunity-card{
-    background:var(--secondary);
+    background:#f4efe6;
+    color:#2d241c;
 
-    text-align:center;
+    padding:70px 50px;
 
-    padding:60px;
+    border-radius:18px;
 
-    border:1px solid rgba(255,255,255,.08);
+    max-width:900px;
+    margin:0 auto;
+
+    box-shadow:
+        10px 10px 0 rgba(0,0,0,.2),
+        0 20px 40px rgba(0,0,0,.15);
 }
 
 .resource-grid{
@@ -624,17 +631,28 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
+    pointer-events:none;
+    z-index:-1;
 
     background:
     radial-gradient(rgba(255,255,255,.08) 1px, transparent 1px);
 
     background-size:6px 6px;
 
-    opacity:.05;
+    opacity:.04;
+}
 
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
     pointer-events:none;
-
     z-index:-1;
+
+    background-image:
+        url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+
+    opacity:0.05;
 }
 
 body{
@@ -642,7 +660,8 @@ body{
 }
 
 section{
-    padding:120px 10%;
+    padding:110px 10%;
+    position:relative;
 }
 
 h2{
@@ -717,20 +736,8 @@ h1, h2, h3{
     letter-spacing:0.5px;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:-1;
-
-    background-image:
-        url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-
-    opacity:0.06;
-}
-
 section{
+    padding:110px 10%;
     position:relative;
 }
 
@@ -757,17 +764,27 @@ h2::after{
     opacity:.6;
 }
 
-.card, .index-card{
+.card,
+.index-card{
     transform:rotate(-0.3deg);
-    transition:.3s ease;
+    transition:.35s ease;
 }
 
 .card:nth-child(even),
 .index-card:nth-child(even){
-    transform:rotate(0.4deg);
+    transform:rotate(0.3deg);
 }
 
-.card:hover, .index-card:hover{
+.card:hover,
+.index-card:hover{
     transform:translateY(-10px) rotate(0deg);
-    box-shadow:12px 12px 0 rgba(0,0,0,.25);
+    box-shadow:14px 14px 0 rgba(0,0,0,.25);
+}
+
+.index-card{
+    text-align:left;
+}
+
+.card, .index-card{
+    letter-spacing:0.2px;
 }
