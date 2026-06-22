@@ -505,7 +505,7 @@ nav ul{
 }
 .reveal{
     opacity:0;
-    transform:translateY(60px);
+    transform:translateY(100px);
     transition:all .8s ease;
 }
 
