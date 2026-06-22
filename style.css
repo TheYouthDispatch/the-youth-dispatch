@@ -369,3 +369,69 @@ nav ul{
         opacity:0;
     }
 }
+.bookshelf-section{
+    text-align:center;
+}
+
+.bookshelf{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+
+    gap:8px;
+
+    margin-top:60px;
+
+    flex-wrap:wrap;
+}
+
+.book{
+
+    width:90px;
+
+    height:280px;
+
+    writing-mode:vertical-rl;
+
+    text-orientation:mixed;
+
+    color:white;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.book:hover{
+    transform:
+    translateY(-15px)
+    rotate(-2deg);
+}
+
+.gov{
+    background:#5d4037;
+}
+
+.apush{
+    background:#6d4c41;
+}
+
+.sat{
+    background:#8d6e63;
+}
+
+.psych{
+    background:#4e342e;
+}
+
+.current{
+    background:#795548;
+}
