@@ -3,75 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>The Youth Dispatch</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="floating floating1"></div>
-<div class="floating floating2"></div>
-<div class="floating floating3"></div>
+<nav>
+    <div class="logo">THE YOUTH DISPATCH</div>
 
-<header>
-    <div class="logo">
-        The Youth Dispatch
-    </div>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="articles.html">Articles</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="opportunities.html">Opportunities</a>
-        <a href="join.html">Join</a>
-    </nav>
-</header>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Articles</a></li>
+        <li><a href="#">Opportunities</a></li>
+        <li><a href="#">Flashcards</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</nav>
 
 <section class="hero">
 
-    <h1>Where Student Voices Meet Research</h1>
+    <div class="hero-content">
 
-    <p>
-        A student-led publication exploring politics,
-        psychology, education, and civic engagement.
-    </p>
+        <p class="volume">VOLUME I · SUMMER 2026</p>
 
-    <a class="button" href="articles.html">
-        Read Articles
-    </a>
+        <h1>
+            Student Journalism,
+            Research &
+            Civic Thought
+        </h1>
+
+        <p class="subtitle">
+            A publication dedicated to ambitious students,
+            thoughtful writing, civic engagement,
+            educational resources, and opportunities.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn">Read Articles</a>
+            <a href="#" class="outline-btn">Submit Work</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quote">
+
+    <h2>
+        “Youth are not the leaders of tomorrow.
+        They are the voices of today.”
+    </h2>
 
 </section>
 
 <section class="featured">
 
-    <h2>Featured Content</h2>
+    <h2>Featured Articles</h2>
 
     <div class="cards">
 
-        <a href="articles.html" class="card">
-            <h3>Articles</h3>
-            <p>Research, commentary, and student journalism.</p>
-        </a>
+        <div class="card">
+            <span>Politics</span>
+            <h3>The Future of Civic Engagement</h3>
+            <p>Exploring how students are shaping political participation.</p>
+        </div>
 
-        <a href="flashcards.html" class="card">
-            <h3>Flashcards</h3>
-            <p>Study government, civics, psychology and more.</p>
-        </a>
+        <div class="card">
+            <span>Research</span>
+            <h3>Education Reform & Student Success</h3>
+            <p>Examining educational policies and outcomes.</p>
+        </div>
 
-        <a href="opportunities.html" class="card">
-            <h3>Opportunities</h3>
-            <p>Scholarships, competitions and internships.</p>
-        </a>
+        <div class="card">
+            <span>Psychology</span>
+            <h3>Why We Think The Way We Do</h3>
+            <p>A look into decision-making and behavior.</p>
+        </div>
 
     </div>
 
 </section>
 
+<section class="opportunity">
+
+    <h2>Opportunity of the Week</h2>
+
+    <div class="opportunity-card">
+        <h3>Research Fellowship Program</h3>
+
+        <p>
+            Discover scholarships, internships,
+            competitions, and academic opportunities.
+        </p>
+
+        <button class="btn">
+            Learn More
+        </button>
+    </div>
+
+</section>
+
+<section class="flashcards">
+
+    <h2>Study Resources</h2>
+
+    <div class="resource-grid">
+
+        <div class="resource-card">AP Government</div>
+        <div class="resource-card">APUSH</div>
+        <div class="resource-card">SAT Prep</div>
+        <div class="resource-card">Current Events</div>
+
+    </div>
+
+</section>
+
+<section class="contributors">
+
+    <h2>Meet Our Contributors</h2>
+
+    <div class="contributors-grid">
+
+        <div class="person">
+            <div class="circle"></div>
+            <h3>Your Name</h3>
+            <p>Founder & Editor</p>
+        </div>
+
+        <div class="person">
+            <div class="circle"></div>
+            <h3>Contributor</h3>
+            <p>Research Writer</p>
+        </div>
+
+        <div class="person">
+            <div class="circle"></div>
+            <h3>Contributor</h3>
+            <p>Staff Writer</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="newsletter">
+
+    <h2>Join The Reading Room</h2>
+
+    <p>
+        Receive articles, opportunities,
+        and research highlights directly.
+    </p>
+
+    <input type="email" placeholder="Your Email">
+
+    <button class="btn">
+        Subscribe
+    </button>
+
+</section>
+
 <footer>
-    © 2026 The Youth Dispatch
+
+    <h3>The Youth Dispatch</h3>
+
+    <p>
+        Journalism • Research • Opportunity
+    </p>
+
 </footer>
 
 </body>
