@@ -100,6 +100,9 @@ nav a:hover::after{
     text-align:center;
 
     padding:40px;
+    
+     position:relative;
+    overflow:hidden;
 }
 
 .hero-content{
@@ -401,18 +404,16 @@ nav ul{
 
     padding:70px 40px;
 
-    background:linear-gradient(
-        180deg,
-        #2a1f18,
-        #1b1410
-    );
+   background:
+        linear-gradient(180deg,#3a2a20,#1b1410);
 
     border-top:10px solid #3b2a20;
     border-bottom:6px solid #120d0a;
 
     box-shadow:
-        inset 0 -50px 80px rgba(0,0,0,.65),
-        0 20px 40px rgba(0,0,0,.35);
+        inset 0 -60px 90px rgba(0,0,0,.7),
+        inset 0 10px 30px rgba(255,255,255,.03),
+        0 25px 50px rgba(0,0,0,.4);
 
     border-radius:8px;
 }
@@ -440,20 +441,10 @@ nav ul{
 
     box-shadow:
         0 15px 25px rgba(0,0,0,.45);
-}
     
-    .book::before{
-    content:"";
-
-    position:absolute;
-
-    width:8px;
-    height:100%;
-
-    left:0;
-    top:0;
-
-    background:rgba(0,0,0,.15);
+    box-shadow:
+        0 18px 30px rgba(0,0,0,.5),
+        inset 0 -10px 20px rgba(0,0,0,.25);
 }
 
 .book::after{
@@ -505,8 +496,8 @@ nav ul{
 }
 .reveal{
     opacity:0;
-    transform:translateY(100px);
-    transition:all .8s ease;
+    transform:translateY(30px);
+    transition:all .7s ease;
 }
 
 .reveal.active{
