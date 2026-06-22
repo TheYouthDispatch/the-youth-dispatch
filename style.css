@@ -55,6 +55,17 @@ nav ul{
     gap:30px;
 }
 
+nav a{
+    color:var(--paper);
+    text-decoration:none;
+
+    position:relative;
+
+    display:inline-block;
+
+    transition:.3s;
+}
+
 nav a::after{
 
     content:"";
