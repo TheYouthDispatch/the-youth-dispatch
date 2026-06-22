@@ -611,3 +611,8 @@ body::before{
 
     border-radius:4px;
 }
+
+.card:hover .article-thumb{
+    transform:scale(1.03);
+    transition:.3s ease;
+}
