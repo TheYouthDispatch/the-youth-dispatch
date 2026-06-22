@@ -115,8 +115,31 @@ nav a:hover::after{
     overflow:hidden;
 }
 
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(176,141,87,.15), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(111,78,55,.12), transparent 45%);
+    pointer-events:none;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:60%;
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.5;
+}
+
 .hero-content{
     max-width:850px;
+    margin-top:-20px;
 }
 
 .volume{
@@ -161,9 +184,23 @@ nav a:hover::after{
 }
 
 .subtitle{
-    font-size:1.2rem;
+    font-size:1.15rem;
     line-height:1.8;
-    opacity:.85;
+    opacity:.9;
+    max-width:650px;
+    margin:0 auto;
+    padding:0 10px;
+    position:relative;
+}
+
+.subtitle::before{
+    content:"“";
+    font-size:3rem;
+    color:var(--gold);
+    position:absolute;
+    left:-20px;
+    top:-20px;
+    opacity:.4;
 }
 
 .hero-buttons{
@@ -225,13 +262,27 @@ section{
 
 .quote{
     text-align:center;
+    padding:60px 10%;
+    margin:0;
 }
 
 .quote h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    max-width:900px;
+    font-size:2.4rem;
+    max-width:700px;
     margin:auto;
+    line-height:1.4;
+}
+
+.quote h2::before,
+.quote h2::after{
+    content:"“";
+    color:var(--gold);
+    font-size:2rem;
+    opacity:.6;
+}
+
+.quote h2::after{
+    content:"”";
 }
 
 .featured h2,
@@ -537,8 +588,15 @@ nav ul{
     line-height:1.8;
 }
 
+.opportunity-card h3{
+    color: var(--paper);
+}
+
+.opportunity-card p{
+    color: rgba(244, 239, 230, 0.9);
+}
 .opportunity-card .btn{
-    margin-top:15px;
+    margin-top:10px;
 }
 
 .article-thumb{
@@ -691,24 +749,31 @@ h2{
 }
 
 .opportunity-card{
-    background:var(--secondary);
+    background: linear-gradient(145deg, #27221d, #1a1612);
     text-align:center;
 
     padding:70px 50px;
 
-    border:1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:18px;
 
     max-width:900px;
     margin:0 auto;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.05);
 }
 
 .opportunity-card h3{
+    color: var(--paper);
     margin-bottom:15px;
 }
 
 .opportunity-card p{
+    color: rgba(244, 239, 230, 0.88);
+    line-height:1.7;
     margin-bottom:30px;
-    font-size:1.05rem;
 }
 
 .index-card:nth-child(odd){
