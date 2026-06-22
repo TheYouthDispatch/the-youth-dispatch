@@ -27,6 +27,12 @@ body{
     font-family:'Inter',sans-serif;
 }
 
+h1, h2, h3{
+    font-family:'Abril Fatface', serif;
+    letter-spacing:0.5px;
+    font-weight:400;
+}
+
 nav{
     display:flex;
     justify-content:space-between;
@@ -168,43 +174,50 @@ nav a:hover::after{
     background:var(--brown);
     color:white;
 
-    padding:15px 30px;
+    padding:15px 32px;
 
     border:none;
-
     cursor:pointer;
 
     text-decoration:none;
 
-    transition:.3s;
-
     display:inline-block;
+
+    border-radius:999px; /* THIS makes it fully round pill style */
+
+    transition:.3s ease;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
 }
 
 .btn:hover{
-    transform:translateY(-4px);
+    transform:translateY(-4px) scale(1.03);
     background:#5a3d2c;
 }
 
 .outline-btn{
     border:1px solid var(--gold);
-
     color:var(--gold);
 
-    padding:15px 30px;
+    padding:15px 32px;
 
     text-decoration:none;
 
     margin-left:15px;
 
-    transition:.3s;
+    display:inline-block;
+
+    border-radius:999px;
+
+    transition:.3s ease;
 }
 
 .outline-btn:hover{
     background:var(--gold);
     color:black;
-}
 
+    transform:translateY(-4px) scale(1.03);
+}
 section{
     padding:100px 10%;
 }
@@ -406,12 +419,11 @@ nav ul{
 
 .particles span{
     position:absolute;
-    width:6px;
-    height:6px;
-    background:rgba(255,255,255,.15);
+    width:4px;
+    height:4px;
+    background:rgba(184,141,87,.25); /* gold ink dust */
     border-radius:50%;
-
-    animation:floatDust 15s linear infinite;
+    animation:floatDust 18s linear infinite;
 }
 
 .particles span:nth-child(1){left:10%;animation-delay:0s;}
@@ -441,15 +453,33 @@ nav ul{
 
 .divider{
     text-align:center;
-
+    margin:60px 0;
+    position:relative;
     color:var(--gold);
-
-    font-size:1.3rem;
-
-    letter-spacing:20px;
-
-    margin:40px 0;
 }
+
+.divider::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:60%;
+    height:20px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(0,0,0,.05),
+            rgba(0,0,0,.05) 2px,
+            transparent 2px,
+            transparent 6px
+        );
+
+    opacity:.2;
+}
+
 .reveal{
     opacity:0;
     transform:translateY(30px);
@@ -685,4 +715,59 @@ h2{
 h1, h2, h3{
     font-family:'Abril Fatface', serif;
     letter-spacing:0.5px;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+
+    background-image:
+        url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+
+    opacity:0.06;
+}
+
+section{
+    position:relative;
+}
+
+section::before{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:radial-gradient(circle, rgba(176,141,87,.08), transparent 70%);
+    top:20px;
+    left:10%;
+    filter:blur(2px);
+    pointer-events:none;
+}
+
+h2{
+    position:relative;
+}
+
+h2::after{
+    content:"✎";
+    font-size:14px;
+    margin-left:10px;
+    opacity:.6;
+}
+
+.card, .index-card{
+    transform:rotate(-0.3deg);
+    transition:.3s ease;
+}
+
+.card:nth-child(even),
+.index-card:nth-child(even){
+    transform:rotate(0.4deg);
+}
+
+.card:hover, .index-card:hover{
+    transform:translateY(-10px) rotate(0deg);
+    box-shadow:12px 12px 0 rgba(0,0,0,.25);
 }
