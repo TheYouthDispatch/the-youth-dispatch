@@ -39,13 +39,17 @@ nav{
     position:sticky;
     top:0;
 
+    z-index:9999;
+
     backdrop-filter:blur(10px);
-    background:rgba(27,24,21,.9);
+    background:rgba(27,24,21,.95);
 }
 
 .logo{
     font-family:'Libre Baskerville',serif;
     letter-spacing:2px;
+    font-size:1.2rem;
+    font-weight:700;
 }
 
 nav ul{
@@ -123,6 +127,19 @@ nav a:hover::after{
     margin-bottom:20px;
 
     animation:fadeUp 1.5s ease;
+}
+
+.hero h1::after{
+    content:"";
+
+    display:block;
+
+    width:180px;
+    height:2px;
+
+    background:var(--gold);
+
+    margin:20px auto;
 }
 
 @keyframes fadeUp{
@@ -221,6 +238,20 @@ section{
     gap:30px;
 }
 
+.card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--gold);
+}
+
 .card{
     background:var(--paper);
 
@@ -230,16 +261,20 @@ section{
 
     border-left:5px solid var(--gold);
 
-    transition:.3s;
+    transition:.35s ease;
 
     background-image:
-linear-gradient(
-rgba(0,0,0,.02),
-rgba(0,0,0,.02)
-);
+    linear-gradient(
+    rgba(0,0,0,.02),
+    rgba(0,0,0,.02)
+    );
 
-box-shadow:
-0 10px 30px rgba(0,0,0,.1);
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.15);
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .card:hover{
@@ -438,9 +473,6 @@ nav ul{
     transition:.35s ease;
 
     border-radius:3px;
-
-    box-shadow:
-        0 15px 25px rgba(0,0,0,.45);
     
     box-shadow:
         0 18px 30px rgba(0,0,0,.5),
@@ -503,4 +535,79 @@ nav ul{
 .reveal.active{
     opacity:1;
     transform:translateY(0);
+}
+.featured{
+    background:#211d19;
+}
+
+.opportunity{
+    background:#181512;
+}
+
+.bookshelf-section{
+    background:#211d19;
+}
+
+.contributors{
+    background:#181512;
+}
+
+.newsletter{
+    background:#211d19;
+}
+.featured h2::after,
+.opportunity h2::after,
+.bookshelf-section h2::after,
+.contributors h2::after,
+.newsletter h2::after{
+    content:"";
+
+    display:block;
+
+    width:120px;
+    height:2px;
+
+    background:var(--gold);
+
+    margin:18px auto 0;
+}
+.opportunity-card p{
+    margin:25px 0;
+    line-height:1.8;
+}
+
+.opportunity-card .btn{
+    margin-top:15px;
+}
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    opacity:.04;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+    rgba(255,255,255,.15) 1px,
+    transparent 1px
+    );
+
+    background-size:8px 8px;
+
+    z-index:-1;
+}
+
+.article-thumb{
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+    border-radius:4px;
 }
