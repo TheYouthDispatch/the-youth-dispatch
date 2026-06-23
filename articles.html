@@ -7,105 +7,75 @@
 <title>Articles | The Youth Dispatch</title>
 
 <link rel="stylesheet" href="style.css">
-
-<style>
-body {
-    background: #1b1815;
-    color: #f4efe6;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-.header {
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 1px solid #333;
-}
-
-.header h1 {
-    font-size: 40px;
-}
-
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-.article {
-    background: #27221d;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.article:hover {
-    transform: translateY(-5px);
-    border: 1px solid #b08d57;
-}
-
-.tag {
-    color: #b08d57;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
-
-h2 {
-    margin: 10px 0;
-}
-
-p {
-    opacity: 0.8;
-    font-size: 14px;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-</style>
-
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="header">
-    <h1>Articles</h1>
-    <p>Research • Opinion • Youth Journalism</p>
-</div>
+<!-- NAV (same as homepage so everything connects) -->
+<nav>
+    <div class="logo-container">
+        <img src="images/logo.png" class="logo-img">
+        <div class="logo">THE YOUTH DISPATCH</div>
+    </div>
 
-<div class="container">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
 
-<div class="grid">
+<!-- HEADER -->
+<section style="text-align:center; padding:80px 10% 40px;">
+    <h1 style="font-size:3.5rem;">Articles</h1>
+    <p style="opacity:0.7; margin-top:10px;">
+        Research • Opinion • Youth Writing
+    </p>
+</section>
 
-    <a href="#" class="article">
-        <div class="tag">RESEARCH</div>
-        <h2>How Much is a Human Life Worth?</h2>
-        <p>Exploring the economics of value, ethics, and policy.</p>
+<!-- CATEGORY FILTER BAR (optional but nice later) -->
+<section style="padding-top:0;">
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <span class="btn">All</span>
+        <span class="outline-btn">Research</span>
+        <span class="outline-btn">Psychology</span>
+        <span class="outline-btn">Civic</span>
+        <span class="outline-btn">Opinion</span>
+    </div>
+</section>
+
+<!-- ARTICLES GRID -->
+<section>
+
+<div class="cards">
+
+    <!-- ARTICLE CARD -->
+    <a href="articles/human-life-value.html" class="card">
+        <img src="images/life-worth.jpg" class="article-thumb">
+        <span>Research</span>
+        <h3>How Much is a Human Life Worth?</h3>
+        <p>Quantifying an Incalculable Value.</p>
     </a>
 
-    <a href="#" class="article">
-        <div class="tag">PSYCHOLOGY</div>
-        <h2>The Viral Opinion Effect</h2>
-        <p>Why beliefs spread faster than facts online.</p>
-    </a>
-
-    <a href="#" class="article">
-        <div class="tag">CIVIC</div>
-        <h2>Youth and Political Voice</h2>
-        <p>How student journalism shapes local awareness.</p>
+    <a href="articles/viral-opinion.html" class="card">
+        <img src="images/viral-opinion.jpg" class="article-thumb">
+        <span>Psychology</span>
+        <h3>What’s the New Viral Opinion?</h3>
+        <p>...and do you still think for yourself?</p>
     </a>
 
 </div>
 
-</div>
+</section>
+
+<footer>
+    <h3>The Youth Dispatch</h3>
+    <p>Journalism • Research • Opportunity</p>
+</footer>
 
 </body>
 </html>
