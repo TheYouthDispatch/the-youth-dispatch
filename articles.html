@@ -3,14 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Articles | The Youth Dispatch</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+body {
+    background: #1b1815;
+    color: #f4efe6;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.header h1 {
+    font-size: 40px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.article {
+    background: #27221d;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    border: 1px solid #b08d57;
+}
+
+.tag {
+    color: #b08d57;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+p {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+</style>
+
 </head>
 
 <body>
 
-<h1>Articles</h1>
-<p>Coming soon.</p>
+<div class="header">
+    <h1>Articles</h1>
+    <p>Research • Opinion • Youth Journalism</p>
+</div>
+
+<div class="container">
+
+<div class="grid">
+
+    <a href="#" class="article">
+        <div class="tag">RESEARCH</div>
+        <h2>How Much is a Human Life Worth?</h2>
+        <p>Exploring the economics of value, ethics, and policy.</p>
+    </a>
+
+    <a href="#" class="article">
+        <div class="tag">PSYCHOLOGY</div>
+        <h2>The Viral Opinion Effect</h2>
+        <p>Why beliefs spread faster than facts online.</p>
+    </a>
+
+    <a href="#" class="article">
+        <div class="tag">CIVIC</div>
+        <h2>Youth and Political Voice</h2>
+        <p>How student journalism shapes local awareness.</p>
+    </a>
+
+</div>
+
+</div>
 
 </body>
 </html>
