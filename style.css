@@ -150,13 +150,23 @@ nav a:hover::after{
 }
 
 .hero h1{
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Abril Fatface', serif;
 
-    font-size:5rem;
+    font-size:6rem;
+
+    font-weight:400;
+
+    line-height:1;
 
     margin-bottom:20px;
 
+    letter-spacing:1px;
+
     animation:fadeUp 1.5s ease;
+
+    text-shadow:
+        0 2px 0 rgba(0,0,0,.2),
+        0 8px 20px rgba(0,0,0,.25);
 }
 
 .hero h1::after{
@@ -456,7 +466,7 @@ footer{
 @media(max-width:768px){
 
 .hero h1{
-    font-size:3.5rem;
+    font-size:4rem;
 }
 
 nav{
