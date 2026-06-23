@@ -152,7 +152,7 @@ nav a:hover::after{
 .hero h1{
     font-family:'Abril Fatface', serif;
 
-    font-size:6rem;
+    font-size:7rem;
 
     font-weight:400;
 
@@ -379,22 +379,6 @@ section{
     margin:15px 0;
 }
 
-.opportunity-card{
-    background:#f4efe6;
-    color:#2d241c;
-
-    padding:70px 50px;
-
-    border-radius:18px;
-
-    max-width:900px;
-    margin:0 auto;
-
-    box-shadow:
-        10px 10px 0 rgba(0,0,0,.2),
-        0 20px 40px rgba(0,0,0,.15);
-}
-
 .resource-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -567,10 +551,6 @@ nav ul{
     background:#181512;
 }
 
-.bookshelf-section{
-    background:#211d19;
-}
-
 .contributors{
     background:#181512;
 }
@@ -580,7 +560,6 @@ nav ul{
 }
 .featured h2::after,
 .opportunity h2::after,
-.bookshelf-section h2::after,
 .contributors h2::after,
 .newsletter h2::after{
     content:"";
@@ -594,18 +573,11 @@ nav ul{
 
     margin:18px auto 0;
 }
-.opportunity-card p{
-    margin:25px 0;
-    line-height:1.8;
-}
 
 .opportunity-card h3{
     color: var(--paper);
 }
 
-.opportunity-card p{
-    color: rgba(244, 239, 230, 0.9);
-}
 .opportunity-card .btn{
     margin-top:10px;
 }
@@ -633,7 +605,7 @@ nav ul{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-    margin-top:40px;
+    margin-top:50px;
 }
 
 .index-card::before{
@@ -758,10 +730,6 @@ h2{
     background:#1f1a16;
 }
 
-.index-grid{
-    margin-top:50px;
-}
-
 .opportunity-card{
     background: linear-gradient(145deg, #27221d, #1a1612);
     text-align:center;
@@ -808,16 +776,6 @@ h2{
 .person:hover{
     transform:translateY(-6px);
     background:rgba(244,239,230,0.08);
-}
-
-h1, h2, h3{
-    font-family:'Abril Fatface', serif;
-    letter-spacing:0.5px;
-}
-
-section{
-    padding:110px 10%;
-    position:relative;
 }
 
 section::before{
