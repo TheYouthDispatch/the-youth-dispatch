@@ -832,14 +832,3 @@ h2::after{
 .hero::after{
     pointer-events: none;
 }
-
-.hero-buttons{
-    position: relative;
-    z-index: 99999;
-}
-
-.btn,
-.outline-btn{
-    position: relative;
-    z-index: 99999;
-}
