@@ -37,15 +37,16 @@
     </p>
 </section>
 
-<!-- CATEGORY FILTER BAR (optional but nice later) -->
-<section style="padding-top:0;">
-    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <span class="btn">All</span>
-        <span class="outline-btn">Research</span>
-        <span class="outline-btn">Psychology</span>
-        <span class="outline-btn">Civic</span>
-        <span class="outline-btn">Opinion</span>
-    </div>
+<!-- SEARCH FUNCTION (optional but nice later) -->
+<section style="padding-top:0; text-align:center;">
+
+    <input
+        type="text"
+        id="articleSearch"
+        class="search-bar"
+        placeholder="Search articles..."
+    >
+
 </section>
 
 <!-- ARTICLES GRID -->
@@ -76,6 +77,32 @@
     <h3>The Youth Dispatch</h3>
     <p>Journalism • Research • Opportunity</p>
 </footer>
+    
+<script>
 
+const searchInput = document.getElementById("articleSearch");
+
+searchInput.addEventListener("keyup", function(){
+
+    const searchTerm = this.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        const text = card.textContent.toLowerCase();
+
+        if(text.includes(searchTerm)){
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+</script>
+    
 </body>
 </html>
