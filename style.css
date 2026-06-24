@@ -842,10 +842,16 @@ h2::after{
 
 a.card,
 a.index-card {
-    color: #2d241c;
+    display: block;
     text-decoration: none;
+    color: #2d241c;
 }
 
-a {
+.card span,
+.card h3,
+.card p,
+.index-card span,
+.index-card h3,
+.index-card p {
     color: inherit;
 }
