@@ -832,3 +832,10 @@ h2::after{
 .hero::after{
     pointer-events: none;
 }
+
+.card,
+.index-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
