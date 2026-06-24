@@ -840,6 +840,12 @@ h2::after{
     color: inherit;
 }
 
+a.card,
+a.index-card {
+    color: #2d241c;
+    text-decoration: none;
+}
+
 a {
     color: inherit;
 }
