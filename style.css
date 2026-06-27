@@ -976,3 +976,21 @@ a.index-card {
     margin-top:15px;
     font-size:0.9rem;
 }
+.flashcards-header{
+    text-align:center;
+    padding:90px 10% 50px;
+}
+
+.flashcard-library{
+    padding-top:20px;
+    padding-bottom:100px;
+}
+
+.flashcard-library .card{
+    text-decoration:none;
+    color:#2d241c;
+}
+
+.flashcard-library .card:hover{
+    transform:translateY(-10px);
+}
