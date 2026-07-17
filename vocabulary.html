@@ -36,27 +36,27 @@
 
 <section style="display:flex; justify-content:center;">
 
-    <div id="card" style="
-        background:#f4efe6;
-        color:#2d241c;
-        padding:60px;
-        border-radius:20px;
-        width:500px;
-        text-align:center;
-        box-shadow:0 20px 40px rgba(0,0,0,.3);
-        cursor:pointer;
-        user-select:none;
-    ">
+   <div id="card" style="
+    background:#f4efe6;
+    border-radius:20px;
+    width:700px;
+    height:500px;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+    overflow:hidden;
+    cursor:pointer;
+">
 
-        <h2 id="word"></h2>
+    <img
+        id="cardImage"
+        src=""
+        style="
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            display:block;
+        ">
 
-        <p id="definition" style="display:none;"></p>
-
-        <p style="margin-top:30px; opacity:.5;">
-            Click the card to flip it
-        </p>
-
-    </div>
+</div>
 
 </section>
 
@@ -69,64 +69,60 @@
 <script>
 
 const cards = [
-    {
-        word:"Ephemeral",
-        definition:"Lasting a very short time."
-    },
-    {
-        word:"Ubiquitous",
-        definition:"Found everywhere."
-    },
-    {
-        word:"Mitigate",
-        definition:"To make less severe."
-    }
+
+{
+    front:"flashcard-images/ephemeral-front.png",
+    back:"flashcard-images/ephemeral-back.png"
+},
+
+{
+    front:"flashcard-images/ubiquitous-front.png",
+    back:"flashcard-images/ubiquitous-back.png"
+},
+
+{
+    front:"flashcard-images/mitigate-front.png",
+    back:"flashcard-images/mitigate-back.png"
+}
+
 ];
 
 let index = 0;
-let showingWord = true;
+    let showingFront = true;
 
-const wordEl = document.getElementById("word");
-const defEl = document.getElementById("definition");
-const card = document.getElementById("card");
+const cardImage = document.getElementById("cardImage");
 
 function loadCard(){
 
-    wordEl.textContent = cards[index].word;
-    defEl.textContent = cards[index].definition;
+    cardImage.src = cards[index].front;
 
-    wordEl.style.display="block";
-    defEl.style.display="none";
-
-    showingWord=true;
+    showingFront = true;
 
 }
 
-card.addEventListener("click",()=>{
+document.getElementById("card").onclick = function(){
 
-    if(showingWord){
+    if(showingFront){
 
-        wordEl.style.display="none";
-        defEl.style.display="block";
+        cardImage.src = cards[index].back;
 
     }else{
 
-        wordEl.style.display="block";
-        defEl.style.display="none";
+        cardImage.src = cards[index].front;
 
     }
 
-    showingWord=!showingWord;
+    showingFront = !showingFront;
 
-});
+}
 
 function nextCard(){
 
     index++;
 
-    if(index>=cards.length){
+    if(index >= cards.length){
 
-        index=0;
+        index = 0;
 
     }
 
