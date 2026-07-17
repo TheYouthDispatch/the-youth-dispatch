@@ -10,61 +10,148 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+.flashcard-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:20px;
+}
+
+.flashcard{
+
+    width:450px;
+    height:320px;
+
+    background:#f4efe6;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.3);
+
+}
+
+
+#cardImage{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    transition:transform .35s ease;
+
+}
+
+
+.flashcard:hover{
+
+    transform:translateY(-5px);
+
+    transition:.3s ease;
+
+}
+
+
+.flash-buttons{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
+
 <nav>
+
     <div class="logo-container">
+
         <img src="images/logo.png" class="logo-img">
-        <div class="logo">THE YOUTH DISPATCH</div>
+
+        <div class="logo">
+            THE YOUTH DISPATCH
+        </div>
+
     </div>
+
 
     <ul>
+
         <li><a href="index.html">Home</a></li>
+
         <li><a href="articles.html">Articles</a></li>
+
         <li><a href="flashcards.html">Flashcards</a></li>
+
         <li><a href="opportunities.html">Opportunities</a></li>
+
         <li><a href="about.html">About</a></li>
+
     </ul>
+
 </nav>
 
+
+
 <section style="text-align:center; padding:80px 10% 30px;">
-    <h1>Vocabulary Flashcards</h1>
-    <p style="opacity:.7;">Click through to study.</p>
+
+    <h1>
+        Vocabulary Flashcards
+    </h1>
+
+    <p style="opacity:.7;">
+        Click the card to flip.
+    </p>
+
 </section>
 
-<section style="display:flex; justify-content:center;">
 
-  <div id="card" class="flashcard">
 
-    <div id="flashInner" class="flashcard-inner">
+<div class="flashcard-container">
 
-        <div class="flashcard-front">
 
-            <img id="frontImage" src="">
+    <div id="card" class="flashcard">
 
-        </div>
+        <img id="cardImage" src="">
 
-        <div class="flashcard-back">
-
-            <img id="backImage" src="">
-
-        </div>
 
     </div>
+
 
 </div>
 
-</section>
 
-<section style="text-align:center; margin-top:10px;">
 
-    <button class="btn" onclick="nextCard()">Next Card</button>
+<div class="flash-buttons">
 
-</section>
+
+    <button class="btn" onclick="nextCard()">
+        Next Card
+    </button>
+
+
+</div>
+
+
+
 
 <script>
+
 
 const cards = [
 
@@ -85,37 +172,69 @@ const cards = [
 
 ];
 
+
 let index = 0;
-    let showingFront = true;
 
-const flashcard = document.getElementById("card");
+let showingFront = true;
 
-const frontImage = document.getElementById("frontImage");
 
-const backImage = document.getElementById("backImage");
+const card = document.getElementById("card");
+
+const cardImage = document.getElementById("cardImage");
+
+
 
 function loadCard(){
 
-    frontImage.src = cards[index].front;
-
-    backImage.src = cards[index].back;
-
-    flashcard.classList.remove("flipped");
+    cardImage.src = cards[index].front;
 
     showingFront = true;
 
 }
-   flashcard.onclick = function(){
 
-    flashcard.classList.toggle("flipped");
 
-    showingFront = !showingFront;
+
+card.onclick = function(){
+
+
+    cardImage.style.transform = "rotateY(90deg)";
+
+
+    setTimeout(()=>{
+
+
+        if(showingFront){
+
+            cardImage.src = cards[index].back;
+
+        }
+
+        else{
+
+            cardImage.src = cards[index].front;
+
+        }
+
+
+        showingFront = !showingFront;
+
+
+        cardImage.style.transform = "rotateY(0deg)";
+
+
+    },175);
+
+
 
 }
-    
+
+
+
 function nextCard(){
 
+
     index++;
+
 
     if(index >= cards.length){
 
@@ -123,15 +242,20 @@ function nextCard(){
 
     }
 
-    flashcard.classList.remove("flipped");
 
     loadCard();
 
+
 }
+
+
 
 loadCard();
 
+
 </script>
 
+
 </body>
+
 </html>
