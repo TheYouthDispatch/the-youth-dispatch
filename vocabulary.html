@@ -36,31 +36,29 @@
 
 <section style="display:flex; justify-content:center;">
 
-   <div id="card" style="
-    background:#f4efe6;
-    border-radius:20px;
-    width:700px;
-    height:500px;
-    box-shadow:0 20px 40px rgba(0,0,0,.3);
-    overflow:hidden;
-    cursor:pointer;
-">
+  <div id="card" class="flashcard">
 
-    <img
-        id="cardImage"
-        src=""
-        style="
-            width:100%;
-            height:100%;
-            object-fit:contain;
-            display:block;
-        ">
+    <div id="flashInner" class="flashcard-inner">
+
+        <div class="flashcard-front">
+
+            <img id="frontImage" src="">
+
+        </div>
+
+        <div class="flashcard-back">
+
+            <img id="backImage" src="">
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
 
-<section style="text-align:center; margin-top:30px;">
+<section style="text-align:center; margin-top:10px;">
 
     <button class="btn" onclick="nextCard()">Next Card</button>
 
@@ -90,32 +88,31 @@ const cards = [
 let index = 0;
     let showingFront = true;
 
-const cardImage = document.getElementById("cardImage");
+const flashcard = document.getElementById("card");
+
+const frontImage = document.getElementById("frontImage");
+
+const backImage = document.getElementById("backImage");
 
 function loadCard(){
 
-    cardImage.src = cards[index].front;
+    frontImage.src = cards[index].front;
+
+    backImage.src = cards[index].back;
+
+    flashcard.classList.remove("flipped");
 
     showingFront = true;
 
 }
+   flashcard.onclick = function(){
 
-document.getElementById("card").onclick = function(){
-
-    if(showingFront){
-
-        cardImage.src = cards[index].back;
-
-    }else{
-
-        cardImage.src = cards[index].front;
-
-    }
+    flashcard.classList.toggle("flipped");
 
     showingFront = !showingFront;
 
 }
-
+    
 function nextCard(){
 
     index++;
@@ -125,6 +122,8 @@ function nextCard(){
         index = 0;
 
     }
+
+    flashcard.classList.remove("flipped");
 
     loadCard();
 
