@@ -2,32 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Vocabulary Flashcards</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vocabulary Flashcards | The Youth Dispatch</title>
 
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <nav>
     <div class="logo-container">
-        <img src="../images/logo.png" class="logo-img">
+        <img src="images/logo.png" class="logo-img">
         <div class="logo">THE YOUTH DISPATCH</div>
     </div>
 
     <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../articles.html">Articles</a></li>
-        <li><a href="../flashcards.html">Flashcards</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="about.html">About</a></li>
     </ul>
 </nav>
 
 <section style="text-align:center; padding:80px 10% 30px;">
     <h1>Vocabulary Flashcards</h1>
-    <p style="opacity:0.7;">Click through to study</p>
+    <p style="opacity:.7;">Click through to study.</p>
 </section>
 
-<!-- FLASHCARD BOX -->
 <section style="display:flex; justify-content:center;">
 
     <div id="card" style="
@@ -42,29 +48,39 @@
         user-select:none;
     ">
 
-        <h2 id="word">Word</h2>
-        <p id="definition">Definition</p>
+        <h2 id="word"></h2>
 
-        <p style="margin-top:30px; opacity:0.5;">Click to flip</p>
+        <p id="definition" style="display:none;"></p>
+
+        <p style="margin-top:30px; opacity:.5;">
+            Click the card to flip it
+        </p>
 
     </div>
 
 </section>
 
-<!-- BUTTONS -->
 <section style="text-align:center; margin-top:30px;">
 
-    <button class="btn" onclick="nextCard()">Next</button>
+    <button class="btn" onclick="nextCard()">Next Card</button>
 
 </section>
 
 <script>
-// ===== YOUR FLASHCARDS (EDIT THESE) =====
+
 const cards = [
-    { word: "Ephemeral", definition: "lasting a very short time" },
-    { word: "Ubiquitous", definition: "found everywhere" },
-    { word: "Candid", definition: "honest and straightforward" },
-    { word: "Mitigate", definition: "make less severe" }
+    {
+        word:"Ephemeral",
+        definition:"Lasting a very short time."
+    },
+    {
+        word:"Ubiquitous",
+        definition:"Found everywhere."
+    },
+    {
+        word:"Mitigate",
+        definition:"To make less severe."
+    }
 ];
 
 let index = 0;
@@ -74,35 +90,52 @@ const wordEl = document.getElementById("word");
 const defEl = document.getElementById("definition");
 const card = document.getElementById("card");
 
-// load first card
-function loadCard() {
+function loadCard(){
+
     wordEl.textContent = cards[index].word;
     defEl.textContent = cards[index].definition;
-    showingWord = true;
+
+    wordEl.style.display="block";
+    defEl.style.display="none";
+
+    showingWord=true;
+
 }
 
-// flip card
-card.addEventListener("click", () => {
-    if (showingWord) {
-        defEl.style.display = "block";
-        wordEl.style.display = "none";
-        showingWord = false;
-    } else {
-        defEl.style.display = "none";
-        wordEl.style.display = "block";
-        showingWord = true;
+card.addEventListener("click",()=>{
+
+    if(showingWord){
+
+        wordEl.style.display="none";
+        defEl.style.display="block";
+
+    }else{
+
+        wordEl.style.display="block";
+        defEl.style.display="none";
+
     }
+
+    showingWord=!showingWord;
+
 });
 
-// next card
-function nextCard() {
+function nextCard(){
+
     index++;
-    if (index >= cards.length) index = 0;
+
+    if(index>=cards.length){
+
+        index=0;
+
+    }
+
     loadCard();
+
 }
 
-// start
 loadCard();
+
 </script>
 
 </body>
