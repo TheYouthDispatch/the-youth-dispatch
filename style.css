@@ -1129,3 +1129,16 @@ a.index-card {
     max-width:650px;
     margin:25px auto;
 }
+.substack-container {
+    width: 100%;
+    max-width: 480px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.substack-container iframe {
+    width: 100%;
+    height: 150px;
+    border: none;
+    background: transparent;
+}
