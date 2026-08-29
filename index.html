@@ -184,15 +184,14 @@
 
     <p>Receive articles, opportunities, and research directly.</p>
 
-    <form action="https://formspree.io/f/xojojbgp" method="POST">
-
-        <input type="email" name="email" placeholder="Your Email" required>
-
-        <button class="btn" type="submit">
-            Subscribe
-        </button>
-
-    </form>
+    <div style="max-width: 480px; margin: 0 auto;">
+        <iframe 
+            src="https://theyouthdispatch.substack.com/embed"
+            style="width: 100%; height: 150px; border: 1px solid #EEE; background: white;"
+            frameborder="0"
+            scrolling="no">
+        </iframe>
+    </div>
 
 </section>
 
@@ -216,34 +215,6 @@ window.addEventListener("scroll", () => {
         if(top < windowHeight - 100){
             el.classList.add("active");
         }
-    }
-});
-</script>
-    
-    <script>
-const form = document.getElementById("newsletter-form");
-const message = document.getElementById("form-message");
-
-form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // stops page redirect
-
-    const data = new FormData(form);
-
-    const response = await fetch(form.action, {
-        method: "POST",
-        body: data,
-        headers: {
-            "Accept": "application/json"
-        }
-    });
-
-    if (response.ok) {
-        message.textContent = "Thanks for subscribing!";
-        message.style.color = "lightgreen";
-        form.reset();
-    } else {
-        message.textContent = "Something went wrong. Try again.";
-        message.style.color = "red";
     }
 });
 </script>
